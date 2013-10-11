@@ -1,5 +1,8 @@
 
 - name: stop tracker
   shell: pkill -f 'SCREEN.*murder_tracker.py'
+  register: result
+  failed_when: result.rc not in [0, 1]
+  changed_when: result.rc not in [0, 1]
   tags: stop_tracker
 

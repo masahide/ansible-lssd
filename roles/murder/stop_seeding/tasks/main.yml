@@ -1,4 +1,7 @@
 
 - name: stop seeding
   shell: pkill -f "SCREEN.*seeder-{{ tag }}"
+  register: result
+  failed_when: result.rc not in [0, 1]
+  changed_when: result.rc not in [0, 1]
   tags: stop_seeding

@@ -1,0 +1,5 @@
+
+- name: install screen
+  yum: name=screen state=latest
+  tags: screen
+

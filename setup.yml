@@ -1,3 +1,4 @@
+
 - name: get distribute_files
   hosts: ansible_host
   roles:
@@ -8,7 +9,15 @@
    - tracker
    - seeder
    - peer
-  #sudo: yes
+  sudo: yes
   roles:
     - admin/distribute_files
+
+- name: install screen
+  hosts: 
+   - tracker
+   - seeder
+  sudo: yes
+  roles:
+    - admin/screen
 
