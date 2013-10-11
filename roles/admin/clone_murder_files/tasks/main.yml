@@ -4,8 +4,11 @@
   register: clone_status
   tags: clone_murder_files
 
-- name: tar -czf
-  shell: tar -czf ./murder_dist.tar.gz -C ./murder/dist/
+- name: rm old tgz
+  shell: rm -f {{ murder_dist_tgz_file }} 
   when: clone_status.changed
+
+- name: tar -czf
+  shell: tar -czf {{ murder_dist_tgz_file }} -C ./murder/dist/ . creates={{ murder_dist_tgz_file }}
   tags: clone_murder_files
 

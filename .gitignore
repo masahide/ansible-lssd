@@ -38,5 +38,6 @@ nosetests.xml
 ansible.cfg
 *.pem
 *.torrent
+murder_dist.tar.gz
 stage
 murder/

@@ -1,3 +1,7 @@
+- name: get distribute_files
+  hosts: ansible_host
+  roles:
+    - admin/clone_murder_files
 
 - name: Upload the support files 
   hosts: 

@@ -16,14 +16,19 @@
 - name: clean up remote_murder_path
   shell: |
     [ $(find {{ remote_murder_path }}/* | wc -l ) -lt 1000 ] && 
-    rm -rf {{ remote_murder_path }}/* || 
+    rm -rf {{ remote_murder_path }} || 
     ( echo 'Cowardly refusing to remove files! Check the remote_murder_path.' ; exit 1 )
   when: copy_status.changed
+  register: rm_status
   tags: distribute_files
 
-- name: tar xzf
-  shell: tar xzf {{ ansible_cache_path }}/murder_dist.tar.gz -C "{{ remote_murder_path }}"
-  when: copy_status.changed
+- name: dir stat
+  stat: path={{ remote_murder_path }}/BitTornado
+  register: st
+
+- name: tar -xzf
+  shell: mkdir -p {{ remote_murder_path }} && tar -xzf {{ ansible_cache_path }}/murder_dist.tar.gz -C {{ remote_murder_path }}
+  when: st.stat.isdir is undefined
   tags: distribute_files
 
 

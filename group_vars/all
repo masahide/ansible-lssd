@@ -27,4 +27,4 @@ torrent_path:       .
 remote_murder_path: /usr/local/murder
 ansible_cache_path: /var/cache/ansible
 default_temp_path:  /tmp
-murder_dist_tgz_file: /tmp/murder_dist_upload.tar.gz
+murder_dist_tgz_file: ./murder_dist.tar.gz

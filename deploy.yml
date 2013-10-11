@@ -1,7 +1,9 @@
 
 
 - name: Deploy 
-  hosts: peer
+  hosts: 
+  - seeder
+  - peer
   sudo: yes
   roles:
     - murder/peer
