@@ -1,15 +1,19 @@
+
+# ansible host
+[ansible_host]
+localhost ansible_connection=local
+
+
+# tracker node
 [tracker]
 10.0.0.1
 
+# seeder node
 [seeder]
 10.0.0.1
 
-[peer:children]
-seeder
-web-servers
-
-
-[web-servers]
+# peer nodes
+[peer]
 10.1.1.1
 10.1.1.2
 10.1.1.3
