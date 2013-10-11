@@ -1,0 +1,7 @@
+
+- name: set tagname to filename
+  set_fact: filename={{ default_temp_path }}/{{ tag }}.tar.gz
+  tags: common
+
+
+

@@ -1,0 +1,10 @@
+
+- name: Upload the support files 
+  hosts: 
+   - tracker
+   - seeder
+   - peer
+  #sudo: yes
+  roles:
+    - admin/distribute_files
+

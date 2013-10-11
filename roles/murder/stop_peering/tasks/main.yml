@@ -1,0 +1,4 @@
+
+- name: stop peering
+  shell: pkill -f "murder_client.py peer.*{{ filename }}"
+  tags: stop_peering

@@ -1,0 +1,5 @@
+
+- name: stop all peering
+  shell: pkill -f "murder_client.py peer"
+  tags: stop_all_peering
+

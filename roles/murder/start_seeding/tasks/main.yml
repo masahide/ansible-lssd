@@ -1,0 +1,4 @@
+
+- name: start seeding
+  shell: SCREENRC=/dev/null SYSSCREENRC=/dev/null screen -dmS 'seeder-{{ tag }}' python {{ remote_murder_path }}/murder_client.py seeder '{{ filename }}.torrent' '{{ filename }}' {{ ansible_default_ipv4['address'] }}
+  tags: start_seeding

@@ -34,3 +34,9 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
+
+ansible.cfg
+*.pem
+*.torrent
+stage
+murder/

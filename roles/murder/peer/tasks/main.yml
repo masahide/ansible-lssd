@@ -1,0 +1,38 @@
+
+- name: set destination_path
+  set_fact: destination_path={{ destination_path }}/{{ tag }}
+  when: not no_tag_directory
+  tags: peer
+
+- name: mkdir destination_path
+  file: path={{ destination_path }} state=directory owner={{ destination_owner }} group={{ destination_group }} mode={{ destination_mod }}
+  tags: peer
+
+- name: delete destination_path/*
+  shell: rm -rf '{{ destination_path }}a/*'
+  when: unsafe_please_delete
+  tags: peer
+
+- name: check destination_path/*
+  shell: |
+    (
+      find {{ destination_path }}/* >/dev/null 2>&1 &&
+      echo "destination_path {{ destination_path }} on $HOSTNAME is not empty" &&
+      exit 1 
+    ) ||
+    exit 0
+  when: not no_tag_directory
+  tags: peer
+
+- name: upload torrent file
+  copy: src={{ torrent_path }}/{{ filename|basename }}.torrent dest={{ filename }}.torrent
+  tags: peer
+
+- name:  run murder_client.py
+  shell: python {{ remote_murder_path }}/murder_client.py peer '{{ filename }}.torrent' '{{filename}}' {{ ansible_default_ipv4['address'] }}
+  tags: peer
+
+- name:  tar xf
+  shell: tar xf {{ filename }} -C "{{ destination_path }}"
+  tags: peer
+

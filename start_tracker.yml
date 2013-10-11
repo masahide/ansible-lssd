@@ -1,0 +1,7 @@
+
+- name: start tracker
+  hosts: tracker
+  sudo: yes
+  roles:
+    - admin/start_tracker
+

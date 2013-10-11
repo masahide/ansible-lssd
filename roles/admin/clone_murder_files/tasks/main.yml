@@ -1,0 +1,11 @@
+
+- name: clone murder
+  git: repo=https://github.com/lg/murder.git dest=./murder
+  register: clone_status
+  tags: clone_murder_files
+
+- name: tar -czf
+  shell: tar -czf ./murder_dist.tar.gz -C ./murder/dist/
+  when: clone_status.changed
+  tags: clone_murder_files
+

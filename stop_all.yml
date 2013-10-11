@@ -1,0 +1,7 @@
+
+- name: Stop all peering
+  hosts: peer
+  sudo: yes
+  roles:
+    - admin/stop_all_peering
+

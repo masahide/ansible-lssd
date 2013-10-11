@@ -1,0 +1,5 @@
+
+- name: stop tracker
+  shell: pkill -f 'SCREEN.*murder_tracker.py'
+  tags: stop_tracker
+

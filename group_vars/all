@@ -1,0 +1,30 @@
+# The global variable file 
+
+# deploy tag
+tag: deploy_test1
+
+# path
+seeder_files_path:  ~/roles
+destination_path:   /tmp
+
+# path permission
+destination_owner: root 
+destination_group: root
+destination_mod: 755
+
+# default tracker port
+tracker_port: 8998
+
+# tar options
+tar_options: --exclude ".git*" --exclude ".svn*" 
+
+# options
+no_tag_directory: false
+unsafe_please_delete: false
+
+# system path
+torrent_path:       . 
+remote_murder_path: /usr/local/murder
+ansible_cache_path: /var/cache/ansible
+default_temp_path:  /tmp
+murder_dist_tgz_file: /tmp/murder_dist_upload.tar.gz

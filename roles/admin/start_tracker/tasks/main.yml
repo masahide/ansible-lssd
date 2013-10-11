@@ -1,0 +1,5 @@
+
+- name: start tracker
+  shell: SCREENRC=/dev/null SYSSCREENRC=/dev/null screen -dmS murder_tracker python {{ remote_murder_path }}/murder_tracker.py && sleep 0.2
+  tags: start_tracker
+

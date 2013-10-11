@@ -1,0 +1,21 @@
+
+- name: create tar.gz
+  shell: tar -c -z -C {{ seeder_files_path }}/ -f {{ filename }} {{ tar_options }} .
+  when: node_type == "seeder"
+  tags: create_tgz
+
+- name: set tracker ip
+  set_fact: tracker_host={{ hostvars[groups['tracker'][0]]['ansible_default_ipv4']['address']  }}
+  when: node_type == "seeder"
+  tags: create_torrent
+
+- name: create torrent
+  shell: python {{ remote_murder_path }}/murder_make_torrent.py '{{ filename }}' {{ tracker_host }}:{{ tracker_port }} '{{ filename }}.torrent'
+  when: node_type == "seeder"
+  tags: create_torrent
+
+- name: fetch torrent
+  fetch: src={{ filename }}.torrent dest={{ torrent_path }}/ flat=yes fail_on_missing=yes
+  when: node_type == "seeder"
+  tags: fetch_torrent
+

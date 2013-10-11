@@ -1,0 +1,4 @@
+
+- name: stop seeding
+  shell: pkill -f "SCREEN.*seeder-{{ tag }}"
+  tags: stop_seeding

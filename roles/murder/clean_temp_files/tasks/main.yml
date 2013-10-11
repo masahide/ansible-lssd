@@ -1,0 +1,4 @@
+
+- name: clean temp files
+  shell: rm -rf "{{ filename }}" "{{ filename }}.torrent"
+  tags: clean_temp_files

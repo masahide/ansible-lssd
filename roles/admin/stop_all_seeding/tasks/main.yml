@@ -1,0 +1,5 @@
+
+- name: stop all seeding
+  shell: pkill -f "SCREEN.*seeder-"
+  tags: stop_all_seeding
+

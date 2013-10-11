@@ -1,0 +1,8 @@
+
+
+- name: Deploy 
+  hosts: peer
+  sudo: yes
+  roles:
+    - murder/peer
+

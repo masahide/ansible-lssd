@@ -1,0 +1,29 @@
+
+- name: mkdir destination_path
+  file: path={{ destination_path }} state=directory owner=root group=root mode=0755
+  tags: distribute_files
+
+- name: mkdir ansible_cache_path
+  file: path={{ ansible_cache_path }} state=directory owner=root group=root mode=0755
+  tags: distribute_files
+
+
+- name: upload
+  copy: src={{ murder_dist_tgz_file }} dest={{ ansible_cache_path }}/murder_dist.tar.gz
+  tags: distribute_files
+  register: copy_status
+
+- name: clean up remote_murder_path
+  shell: |
+    [ $(find {{ remote_murder_path }}/* | wc -l ) -lt 1000 ] && 
+    rm -rf {{ remote_murder_path }}/* || 
+    ( echo 'Cowardly refusing to remove files! Check the remote_murder_path.' ; exit 1 )
+  when: copy_status.changed
+  tags: distribute_files
+
+- name: tar xzf
+  shell: tar xzf {{ ansible_cache_path }}/murder_dist.tar.gz -C "{{ remote_murder_path }}"
+  when: copy_status.changed
+  tags: distribute_files
+
+
