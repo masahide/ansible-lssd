@@ -1,0 +1,5 @@
+
+- name: yum install pigz
+  yum: name=pigz state=latest
+  tags: pigz
+

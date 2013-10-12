@@ -4,7 +4,7 @@
   roles:
     - admin/clone_murder_files
 
-- name: Upload the support files 
+- name: Upload the support files and install pigz
   hosts: 
    - tracker
    - seeder
@@ -12,6 +12,7 @@
   sudo: yes
   roles:
     - admin/distribute_files
+    - admin/pigz
 
 - name: install screen
   hosts: 

@@ -1,6 +1,6 @@
 
 - name: create tar.gz
-  shell: tar -c -z -C {{ seeder_files_path }}/ -f {{ filename }} {{ tar_options }} .
+  shell: tar -c -C {{ seeder_files_path }}/ {{ tar_options }} .|pigz > {{ filename }}
   when: node_type == "seeder"
   tags: create_tgz
 

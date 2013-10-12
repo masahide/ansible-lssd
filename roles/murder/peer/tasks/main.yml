@@ -33,6 +33,6 @@
   tags: peer
 
 - name:  tar xf
-  shell: tar xf {{ filename }} -C "{{ destination_path }}"
+  shell: unpigz -c {{ filename }} | tar -x -C "{{ destination_path }}"
   tags: peer
 

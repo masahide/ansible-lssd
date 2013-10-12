@@ -1,6 +1,6 @@
 ---
-- setup.yml
-- create_torrent.yml
-- deploy.yml
-- stop_seeder_and_tracker.yml
+- include: setup.yml
+- include: create_torrent.yml
+- include: deploy.yml
+- include: stop_seeder_and_tracker.yml
 

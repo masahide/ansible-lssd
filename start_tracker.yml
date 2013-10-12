@@ -1,6 +1,7 @@
 
 - name: start tracker
   hosts: tracker
+  gather_facts: no
   sudo: yes
   roles:
     - admin/start_tracker

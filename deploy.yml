@@ -5,6 +5,7 @@
   - seeder
   - peer
   sudo: yes
+  #serial: 100
   roles:
     - murder/peer
 
