@@ -2,8 +2,8 @@
 
 - name: Deploy 
   hosts: 
-  - seeder
   - peer
+  #- seeder
   sudo: yes
   #serial: 100
   roles:

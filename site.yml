@@ -1,5 +1,8 @@
 ---
 - include: setup.yml
+- include: stop_seeder_and_tracker.yml
+- include: stop_all.yml
+- include: rm_tgz.yml
 - include: start_tracker.yml
 - include: create_torrent.yml
 - include: deploy.yml
