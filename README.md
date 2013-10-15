@@ -24,16 +24,6 @@ For the impatient, `sudo pip install ansible` :
   $ sudo pip install ansible
   ```
 
-and add these lines to your group_vars/all:
-  ```YAML:group_vars/all
-  # deploy tag
-  tag: Deploy1
-  
-  # path
-  seeder_files_path:  ~/builds
-  destination_path:   /directorypath/hoge/
-  ```
-
 
 HOW IT WORKS
 ------------
@@ -46,10 +36,8 @@ CONFIGURATION AND USAGE
 
 You define `tracker`, `seeder` and `peer` server to inventory (./production) file.
 
-All involved servers must have python and pizg installed and the related murder
-support files (BitTornado, etc.). To upload the support files to the
-tracker, seeder, and peers, run:
-
+All involved servers must have python installed and the related murder
+support files (BitTornado, Murder lib, screen, pigz and etc.). To upload the support files to the tracker, seeder, and peers, run:
   ```bash:
   $ ansible-playbook -i prodction setup.yml
   ```
