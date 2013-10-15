@@ -1,9 +1,8 @@
 
-
 - name: Deploy 
   hosts: peer
   sudo: yes
-  serial: 1000
+  serial: 1000  # to a value greater than peer nodes
   roles:
     - murder/peer
 
