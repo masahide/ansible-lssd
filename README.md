@@ -138,8 +138,8 @@ up on all hosts, then manually run the murder cap tasks:
 When this finishes, all peers will have the files in /opt/hoge/Deploy1
 
 
-main yamls REFERENCE
---------------------
+MAIN PLAYBOOKS REFERENCE
+------------------------
 
 * `create_torrent.yml:`
   * Create torrent file on seeder node.
