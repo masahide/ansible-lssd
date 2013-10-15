@@ -1,7 +1,7 @@
 ansible-lssd
 ============
 
-Large scale server deploys using BitTorrent and the BitTornado library by [Murder](https://github.com/lg/murder)
+Large scale server deploys using BitTorrent and the BitTornado library by [Murder](https://github.com/lg/murder).
 
 DESCRIPTION
 -----------
@@ -136,5 +136,31 @@ up on all hosts, then manually run the murder cap tasks:
   ```
 
 When this finishes, all peers will have the files in /opt/hoge/Deploy1
+
+
+main yamls REFERENCE
+--------------------
+
+* `create_torrent.yml:`
+  * Create torrent file on seeder node.
+* `deploy.yml:`
+  * Deploy files on peer nodes.
+* `rm_tgz.yml:`
+  * Delete the file deployment of targz in all peer node.
+* `setup.yml:`
+  * Install the software required for each node.
+* `site.yml:`
+  * Run all Playbook deploy from the setup.
+* `start_seeder.yml:`
+  * start seeding.
+* `start_tracker.yml:`
+  * start tracker.
+* `stop_all_peers.yml:`
+  * stop all peer client.
+* `stop_seeder_and_tracker.yml:`
+  * stop seeding and tracker.
+
+
+
 
 
