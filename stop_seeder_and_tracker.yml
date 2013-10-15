@@ -1,13 +1,12 @@
 
-- name: Stop seeding
+- name: Stop seeder
   hosts: seeder
   sudo: yes
   roles:
-    - murder/stop_seeding
+    - admin/stop_seeder
 
 - name: Stop tracker
   hosts: tracker
   sudo: yes
   roles:
     - admin/stop_tracker
-

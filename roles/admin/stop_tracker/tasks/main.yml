@@ -1,4 +1,4 @@
-
+# If the Bittorrent tracker is running, this will kill the process. Note that if it is not running you will receive an error.
 - name: stop tracker
   shell: pkill -f 'SCREEN.*murder_tracker.py'
   register: result

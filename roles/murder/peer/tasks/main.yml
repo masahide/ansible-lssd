@@ -1,4 +1,12 @@
-
+#  Instructs all the peer servers to connect to the tracker and start download and spreading pieces and files amongst themselves.
+# You must specify a valid 'tag' argument.
+# Once the download is complete on a server, that server will fork the download process and seed for 30 seconds while returning control to Ansible.
+# extract the files to the passed in 'destination_path' argument to destination_path/TAG/*.
+# To not create this tag named directory, pass in the 'no_tag_directory=1' argument.
+# If the directory is not empty, this command will fail.
+# To clean it, pass in the 'unsafe_please_delete=1' argument.
+# The compressed tgz in /{{ default_temp_path }} is never removed.
+# When this task completes, all files have been transferred and moved into the requested directory.
 - name: set destination_path
   set_fact: destination_path={{ destination_path }}/{{ tag }}
   when: not no_tag_directory
@@ -9,7 +17,7 @@
   tags: peer
 
 - name: delete destination_path/*
-  shell: rm -rf '{{ destination_path }}a/*'
+  shell: rm -rf '{{ destination_path }}/*'
   when: unsafe_please_delete
   tags: peer
 

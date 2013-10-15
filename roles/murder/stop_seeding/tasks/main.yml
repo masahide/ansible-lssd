@@ -1,4 +1,7 @@
 
+# If the seeder is currently seeding, this will kill the process.
+# If a peer was downloading from this seed, the peer will find another host to receive any remaining data. 
+# You must specify a valid 'tag' argument.
 - name: stop seeding
   shell: pkill -f "SCREEN.*seeder-{{ tag }}"
   register: result

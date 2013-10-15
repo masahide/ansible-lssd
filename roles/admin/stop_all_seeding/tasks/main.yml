@@ -1,4 +1,4 @@
-
+# Identical to stop_seeding, except this will kill all seeding processes. No 'tag' argument is needed."
 - name: stop all seeding
   shell: pkill -f "SCREEN.*seeder-"
   register: result

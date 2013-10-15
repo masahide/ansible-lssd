@@ -1,4 +1,5 @@
-
+# Sometimes peers can go on forever (usually because of an error).
+# This command will forcibly kill all "murder_client.py peer" commands that are running.
 - name: stop all peering
   shell: pkill -f "murder_client.py peer"
   register: result

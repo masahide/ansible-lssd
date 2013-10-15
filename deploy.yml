@@ -1,11 +1,9 @@
 
 
 - name: Deploy 
-  hosts: 
-  - peer
-  #- seeder
+  hosts: peer
   sudo: yes
-  #serial: 100
+  serial: 1000
   roles:
     - murder/peer
 

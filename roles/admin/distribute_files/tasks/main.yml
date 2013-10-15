@@ -1,4 +1,6 @@
-
+# SCPs a compressed version of all files from ./dist (the python Bittorrent library and custom scripts) to all server.
+# The entire directory is sent, regardless of the role of each individual server.
+# The path on the server is specified by remote_murder_path and will be cleared prior to transferring files over.
 - name: mkdir destination_path
   file: path={{ destination_path }} state=directory owner=root group=root mode=0755
   tags: distribute_files
