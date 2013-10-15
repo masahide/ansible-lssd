@@ -3,7 +3,7 @@ ansible-lssd
 
 Large scale server deploys using BitTorrent and the BitTornado library by [Murder](https://github.com/lg/murder).
 Mechanism is the same as Murder.
-For an intro video, see: Twitter - Murder Bittorrent Deploy System
+For an intro video, see: [Twitter - Murder Bittorrent Deploy System](http://vimeo.com/11280885)
 
 
 DESCRIPTION
