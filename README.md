@@ -14,7 +14,7 @@ ansible-lssd  is a method of using Bittorrent (Powered by [Murder](https://githu
 ansible-lssd operates as a playbook of [Ansible](https://github.com/ansible/ansible).
 These playbooks require Ansible 1.3.
 
-These playbooks are meant to be a reference and starter's guide to building Ansible Playbooks. These playbooks were tested on CentOS 5.x so we recommend that you use CentOS to test these modules.
+These playbooks were tested on CentOS 5.x so we recommend that you use CentOS to test these modules.
 
 Advantage
 ---------
