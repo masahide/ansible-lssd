@@ -42,7 +42,7 @@ HOW IT WORKS
 Same as the "[HOW IT WORKS](https://github.com/lg/murder/blob/master/README.md#how-it-works)" of Murder.
 
 
-CONFIGURATION AND USAGE
+CONFIGURATION
 -----------------------
 
 You define `tracker`, `seeder` and `peer` server to inventory (./production) file.
@@ -56,21 +56,9 @@ support files (BitTornado, Murder lib, screen, pigz and etc.). To upload the sup
 By default, these will go in `/usr/local/murder` in your apps deploy directory. 
 Override this by setting the variable `remote_murder_path`. 
 
-Before deploying, you must start the tracker:
 
-  ```bash:
-  $ ansible-playbook -i prodction start_tracker.yml
-  ```
-
-At this point you should be able to deploy normally:
-
-  ```bash:
-  $ ansible-playbook -i prodction deploy.yml
-  ```
-
-
-MANUAL USAGE (ansible-lssd without a deploy strategy)
------------------------------------------------------
+MANUAL USAGE
+------------
 
 Modify a ./production and ./group_vars/all, manually define servers:
 
@@ -105,8 +93,9 @@ group_vars/all:
   destination_path:   /opt/hoge  # or some other directory
   ```
 
-To distribute a directory of files, first make sure that murder is set
-up on all hosts, then manually run the murder cap tasks:
+The destination_path, by setup.yml, specify the directory to be placed in the all server of Murder library and support files etc..
+
+Then manually run the ansible playbooks:
 
 1. Start the tracker:
 
