@@ -5,13 +5,6 @@ Large scale server deploys using BitTorrent and the BitTornado library by [Murde
 Mechanism is the same as Murder.
 For an intro video, see: [Twitter - Murder Bittorrent Deploy System](http://vimeo.com/11280885)
 
-Advantage
----------
-
-There is the following advantage as compared with Murder. 
-* *Ruby is not required*  to run on only python.
-* *Capistrano is not required*. run in the ansible playbooks.
-* Environment setup is automated by playbook.
 
 DESCRIPTION
 -----------
@@ -22,6 +15,14 @@ ansible-lssd operates as a playbook of [Ansible](https://github.com/ansible/ansi
 These playbooks require Ansible 1.3.
 
 These playbooks are meant to be a reference and starter's guide to building Ansible Playbooks. These playbooks were tested on CentOS 5.x so we recommend that you use CentOS to test these modules.
+
+Advantage
+---------
+
+There is the following advantage as compared with Murder. 
+* *Ruby is not required*  to run on only python.
+* *Capistrano is not required*. run in the ansible playbooks.
+* Environment setup is automated by playbook.
 
 
 QUICK START
