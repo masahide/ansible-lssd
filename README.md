@@ -25,10 +25,10 @@ There is the following advantage as compared with Murder.
 * Environment setup is automated by playbook.
 
 
-QUICK START
------------
+Installation of software required minimum
+-----------------------------------------
 
-For the impatient, `sudo pip install ansible` :
+`sudo pip install ansible` :
   ```bash:
   # install pip (Python package manager) and ansible
   $ sudo easy_install pip
