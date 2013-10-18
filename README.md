@@ -70,11 +70,11 @@ Modify a ./production and ./group_vars/all, manually define servers:
   
   # tracker node
   [tracker]
-  10.0.0.1
+  10.0.0.1 node_type=tracker
   
   # seeder node
   [seeder]
-  10.0.0.1
+  10.0.0.1 node_type=seeder
   
   # peer nodes
   [peer]
