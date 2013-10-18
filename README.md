@@ -119,7 +119,7 @@ Then manually run the ansible playbooks:
 3. Distribute the torrent to all peers:
 
   ```bash:
-  $ ansible-playbook -i prodction deploy.yml
+  $ ansible-playbook -i prodction deploy.yml -f 1000
   ```
 
 4. Stop the seeder and tracker:
