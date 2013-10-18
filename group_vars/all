@@ -5,7 +5,7 @@ tag: deploy_test2
 
 # path
 seeder_files_path:  ~/builds
-destination_path:   /tmp
+destination_path:   /product/hoge
 
 # path permission
 destination_owner: root 
