@@ -1,15 +1,14 @@
-
 # ansible host
 [ansible_host]
 localhost ansible_connection=local
 
 # tracker node
 [tracker]
-10.0.0.1
+10.0.0.1 node_type=tracker
 
 # seeder node
 [seeder]
-10.0.0.1
+10.0.0.1 node_type=seeder
 
 # peer nodes
 [peer]
