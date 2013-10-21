@@ -12,7 +12,7 @@ DESCRIPTION
 ansible-lssd  is a method of using Bittorrent (Powered by [Murder](https://github.com/lg/murder)) to distribute files to a large amount of servers within a production environment. 
 
 ansible-lssd operates as a playbook of [Ansible](https://github.com/ansible/ansible).
-These playbooks require Ansible 1.3.
+These playbooks require Ansible 1.4.
 
 These playbooks were tested on CentOS 5.x so we recommend that you use CentOS to test these modules.
 
